@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCore", "DotNetCore\DotNetCore.csproj", "{151C5693-4E1A-485B-95D1-DADC5A6AF23D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{56002866-6753-40A0-A5C1-A8214195FED1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaiwanMT", "WebApplication1\TaiwanMT.csproj", "{56002866-6753-40A0-A5C1-A8214195FED1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
