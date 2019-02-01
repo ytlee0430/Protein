@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace DotNetCore
+namespace TaiwanMuscle
 {
     public class Startup
     {
@@ -28,7 +28,7 @@ namespace DotNetCore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
+            #region  添加SwaggerUI
 
             services.AddSwaggerGen(options =>
             {
@@ -43,9 +43,9 @@ namespace DotNetCore
                 options.IgnoreObsoleteActions();
                 options.DocInclusionPredicate((docName, description) => true);
                 options.DescribeAllEnumsAsStrings();
-                //options.OperationFilter<HttpHeaderOperation>(); // 添加httpHeader参数
             });
 
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,6 +63,7 @@ namespace DotNetCore
             app.UseHttpsRedirection();
             app.UseMvc();
 
+            #region 使用SwaggerUI
 
             app.UseSwagger();
             app.UseSwaggerUI(options =>
@@ -70,6 +71,7 @@ namespace DotNetCore
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Dinner API V1");
             });
 
+            #endregion
         }
     }
 }

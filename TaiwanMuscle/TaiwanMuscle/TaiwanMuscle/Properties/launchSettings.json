@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:54518",
-      "sslPort": 44304
+      "applicationUrl": "http://localhost:64300",
+      "sslPort": 44305
     }
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",
@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "DotNetCore": {
+    "TaiwanMuscle": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",
