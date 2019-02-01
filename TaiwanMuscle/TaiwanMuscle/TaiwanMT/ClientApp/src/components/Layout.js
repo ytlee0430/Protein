@@ -9,10 +9,10 @@ export class Layout extends Component {
     return (
       <Grid fluid>
         <Row>
-          <Col sm={3}>
+          <Col sm={12} className="navBarCol">
             <NavMenu />
           </Col>
-          <Col sm={9}>
+          <Col sm={12} className="contentCol">
             {this.props.children}
           </Col>
         </Row>

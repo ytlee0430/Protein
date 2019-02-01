@@ -1,6 +1,17 @@
+
+.navBarCol{
+    height: 53px;
+}
+.contentCol{
+    padding: 0;
+}
+
+/* Media Query */
 @media (max-width: 767px) {
-    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
     body {
         padding-top: 50px;
+    }
+    .navBarCol{
+        height: auto;
     }
 }

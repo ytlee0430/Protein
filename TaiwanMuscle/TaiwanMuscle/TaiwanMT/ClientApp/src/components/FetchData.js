@@ -15,6 +15,7 @@ export class FetchData extends Component {
   }
 
   static renderForecastsTable(forecasts) {
+    console.log(forecasts)
     return (
       <table className='table'>
         <thead>
