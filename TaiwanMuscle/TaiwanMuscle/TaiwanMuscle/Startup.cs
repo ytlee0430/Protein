@@ -65,7 +65,7 @@ namespace TaiwanMuscle
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env,ProteinsContext proteinsContext)
         {
             if (env.IsDevelopment())
             {
@@ -75,6 +75,8 @@ namespace TaiwanMuscle
             {
                 app.UseHsts();
             }
+            // 建立資料庫            
+            proteinsContext.Database.EnsureCreated();
 
             app.UseHttpsRedirection();
             app.UseMvc();

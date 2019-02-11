@@ -6,9 +6,6 @@ namespace TaiwanMuscle.Models
 {
     public partial class ProteinsContext : DbContext
     {
-        public ProteinsContext()
-        {
-        }
 
         public ProteinsContext(DbContextOptions<ProteinsContext> options)
             : base(options)
