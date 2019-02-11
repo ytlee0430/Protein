@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using TaiwanMuscle.Models;
 
 namespace TaiwanMuscle.Controllers
 {
     [Route("api/[controller]")]
+    [Consumes("application/json", "multipart/form-data")]//允许文件上传
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly ProteinsContext _proteinsContext;
+        public ValuesController(ProteinsContext proteinsContext)
+        {
+            _proteinsContext = proteinsContext;
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
@@ -26,8 +34,9 @@ namespace TaiwanMuscle.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post(TestParam test)
         {
+            var x = _proteinsContext.ProteinData.Where(a => a.Id == 0).FirstOrDefault();
         }
 
         // PUT api/values/5
@@ -41,5 +50,10 @@ namespace TaiwanMuscle.Controllers
         public void Delete(int id)
         {
         }
+    }
+
+    public class TestParam
+    {
+        public string Test { get; set; }
     }
 }

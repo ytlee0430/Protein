@@ -7,11 +7,15 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using Swashbuckle.AspNetCore.Swagger;
+using TaiwanMuscle.Common;
+using TaiwanMuscle.Models;
 
 namespace TaiwanMuscle
 {
@@ -27,7 +31,19 @@ namespace TaiwanMuscle
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+           // services.AddDbContextPool<ProteinsContext>( // replace "YourDbContext" with the class name of your DbContext
+           //    options => options.UseMySql("server=proteins.cdys9koffynq.us-east-1.rds.amazonaws.com;port=3306;database=Proteins;uid=protein;password=hilosystem;", // replace with your Connection String
+           //        mySqlOptions =>
+           //        {
+           //            mySqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql); // replace with your Server Version and Type
+           //         }
+           //));
+            services.AddDbContextPool<ProteinsContext>(options => options.UseMySql("server=proteins.cdys9koffynq.us-east-1.rds.amazonaws.com;port=3306;database=Proteins;uid=protein;password=hilosystem;"));
+
             #region  添加SwaggerUI
 
             services.AddSwaggerGen(options =>

@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaiwanMuscle", "TaiwanMuscle\TaiwanMuscle.csproj", "{4EDD6E74-7B9C-4855-9DE3-2CF1F173D04A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaiwanMT", "TaiwanMT\TaiwanMT.csproj", "{3061448F-832C-4A90-8B8C-6B416C33632E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaiwanMT", "TaiwanMT\TaiwanMT.csproj", "{3061448F-832C-4A90-8B8C-6B416C33632E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{862F55D6-5BC2-4F51-BA5C-3BD05F02A770}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{3061448F-832C-4A90-8B8C-6B416C33632E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3061448F-832C-4A90-8B8C-6B416C33632E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3061448F-832C-4A90-8B8C-6B416C33632E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{862F55D6-5BC2-4F51-BA5C-3BD05F02A770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{862F55D6-5BC2-4F51-BA5C-3BD05F02A770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{862F55D6-5BC2-4F51-BA5C-3BD05F02A770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{862F55D6-5BC2-4F51-BA5C-3BD05F02A770}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
