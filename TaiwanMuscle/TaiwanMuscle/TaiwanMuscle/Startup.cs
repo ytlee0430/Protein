@@ -34,7 +34,7 @@ namespace TaiwanMuscle
             services.AddCors();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
+            services.AddHttpContextAccessor();
            // services.AddDbContextPool<ProteinsContext>( // replace "YourDbContext" with the class name of your DbContext
            //    options => options.UseMySql("server=proteins.cdys9koffynq.us-east-1.rds.amazonaws.com;port=3306;database=Proteins;uid=protein;password=hilosystem;", // replace with your Connection String
            //        mySqlOptions =>
@@ -78,8 +78,12 @@ namespace TaiwanMuscle
             // 建立資料庫            
             proteinsContext.Database.EnsureCreated();
 
-            app.UseHttpsRedirection();
             app.UseMvc();
+
+            app.UseMvcWithDefaultRoute();
+
+            app.UseHttpsRedirection();
+            
 
             #region 使用SwaggerUI
 
