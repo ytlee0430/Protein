@@ -75,6 +75,12 @@ namespace TaiwanMuscle.Controllers
         public ActionResult<Result<List<P004>>> GetShoppingCartProducts()
         {
             //TODO: 從cookie拿
+            var lastChart = _httpContextAccessor.HttpContext.Request.Cookies["chart"];
+            if (!string.IsNullOrEmpty(lastChart))
+            {
+                //取得目前已加入產品ID，比對目前資料庫產品狀態 ，並更新
+            }
+
             var a = new Result<List<P004>>() { ok = 1 };
             return a;
         }
@@ -84,8 +90,9 @@ namespace TaiwanMuscle.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost, Route("P005")]
-        public ActionResult<Result<List<P005>>> GetPurchaseHistoryInfos()
+        public ActionResult<Result<List<P005>>> GetPurchaseHistoryInfos(P005Rq rq)
         {
+
             var a = new Result<List<P005>>() { ok = 1 };
             return a;
         }
